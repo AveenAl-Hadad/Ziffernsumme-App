@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ziffernsumme Rechner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+
+    input, button {
+      font-size: 1.2em;
+      margin: 10px 0;
+      padding: 8px;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ziffernsumme berechnen</h1>
+  <p>Gib eine Zahl ein:</p>
+  <input type="number" id="numberInput" placeholder="z.B. 1234567" />
+  <button onclick="berechneZiffernsumme()">Berechne</button>
+
+  <div id="result"></div>
+
+  <script>
+    function berechneZiffernsumme() {
+      const zahl = document.getElementById("numberInput").value;
+      let summe = 0;
+      
+      for (let i = 0; i < zahl.length; i++) {
+        summe += parseInt(zahl[i]);
+      }
+
+      document.getElementById("result").innerText = `Ziffernsumme: ${summe}`;
+    }
+  </script>
+</body>
+</html>
